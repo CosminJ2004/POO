@@ -65,22 +65,23 @@ class Card{
                 XP=XP+8;
 
             }
-            else if(rank<2)
+            else if(rank>2)
             {
                 XP=XP-3;
             }
         }
-         void PlayAlone(int rank)
+        
+         void PlayAlone(int &rank)
     {
-        std::cout<<"Play Brawl Stars alone with the character: "<<numeCard<<" level: "<<levelCard<<" type: "<<tipCard<<std::endl;
-        rank=1+rand()%5;
+        std::cout<<"Playing Solo"<<std::endl;
+        this->rank=1+rand()%8;
 
         
     }
-     void PlayTeam( int rank)
+     void PlayTeam( int &rank)
     {
-        std::cout<<"Play Brawl Stars alone with the character: "<<numeCard<<" level: "<<levelCard<<" type: "<<tipCard<<std::endl;
-        rank=1+rand()%5;
+        std::cout<<"Playing in a Team "<<std::endl;
+        this->rank=1+rand()%5;
     }
     
 
@@ -139,17 +140,16 @@ class Balance
             for(int bani:istoricBalanta)
             {
                 std::cout<<bani<<" ";
-                std::cout<<std::endl;
             }
         }
     void VerifBalanta(int banuti)
     {
         if(banuti>0)
-        std::cout<<"Esti pe plus"<<'\n';
+        std::cout<<"You still have money"<<'\n';
         if(banuti<0)
-        std::cout<<"Esti pe minus, ti se va restarta balanta de la 0"<<'\n';
-        else 
-        std::cout<<"Esti pe zero"<<'\n';
+        std::cout<<"You are in debt"<<'\n';
+        if(banuti==0)
+        std::cout<<"You have no money"<<'\n';
     }
      void Spend() 
     {
@@ -191,7 +191,7 @@ int main()
     Card card17("Doug",1,"Mythic");
     Card card18("Pearl",2,"Epic");
     Card card19("Spike",5,"Legendary");
-    Card card27("Cordelius",1,"Legendary");
+    Card card1("Cordelius",1,"Legendary");
     Card card20("Penny",7,"Rare");
     Card card21("Amber",1,"Legendary");
     Card card22("Tara",2,"Mythic");
@@ -199,11 +199,42 @@ int main()
     Card card24("Darryl",3,"Rare");
     Card card25("Gus",4,"SuperRare");
     Card card26("Jessie",1,"SuperRare");
+    Card card27("Nita Special", 1, "Common");
+    Card card28("Nita", 1, "Common");
+    Card card29("Colt", 1, "Common");
+    Card card30("Barley", 1, "Rare");
+    Card card31("Poco", 1, "Rare");
+    Card card32("Rosa", 1, "Rare");
+    Card card33("Rico", 1, "Super Rare");
+    Card card34("Jacky", 1, "Super Rare");
+    Card card35("Piper", 1, "Epic");
+    Card card36("Pam", 1, "Epic");
+    Card card37("Frank", 1, "Epic");
+    Card card38("Bibi", 1, "Epic");
+    Card card39("Edgar", 1, "Epic");
+    Card card40("Max", 1, "Mythic");
+    Card card41("Mr. P", 1, "Mythic");
+    Card card42("Sprout", 1, "Mythic");
+    Card card43("Gene", 1, "Mythic");
+    Card card44("Crow", 1, "Legendary");
+    Card card45("Leon", 1, "Legendary");
+    Card card46("Colette", 1, "Legendary");
+    Card card47("Lou", 1, "Legendary");
+    Card card48("Colonel Ruffs", 1, "Legendary");
+    Card card49("Belle", 1, "Chromatic");
+    Card card50("Squeak", 1, "Chromatic");
+    Card card51("Buzz", 1, "Chromatic");
+    Card card52("Griff", 1, "Chromatic");
+
+
+
     Balance bani(100);
     int rank=0;
     int XP=0;
     while (true)
     {
+
+    std::cout<<"**********************************************************************"<<std::endl;
     int unbox=0;
     int caz=0;
     std::cout<<"Select your actions:"<<std::endl;
@@ -211,242 +242,14 @@ int main()
     std::cout<<"2)Play"<<std::endl;
     std::cout<<"3)Pacaneste"<<std::endl; 
     std::cout<<"4)Quit"<<std::endl; 
+        std::cout<<"**********************************************************************"<<std::endl;
+
+    
     
     std::cin>>unbox;
     srand(time(NULL));
     
-    if(unbox==1)
-    {   
-        
-        bani.Spend();
-        caz=(rand())%28;
-        if(caz==0)
-           { if(card2.verif_brawler(card2.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card2.printCard();}
-                else
-                card2.AddPlayer(card2);    
-           } 
-        
-        if(caz==1)
-           { if(card2.verif_brawler(card3.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card3.printCard();}
-                else
-                card2.AddPlayer(card3);    
-           } 
-        
-        if(caz==2)
-           { if(card2.verif_brawler(card4.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card4.printCard();}
-                else
-                card2.AddPlayer(card4);    
-           } 
-        
-        if(caz==3)
-           { if(card2.verif_brawler(card5.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card5.printCard();}
-                else
-                card2.AddPlayer(card5);    
-           } 
-        
-        if(caz==4)
-           { if(card2.verif_brawler(card6.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card6.printCard();}
-                else
-                card2.AddPlayer(card6);    
-           } 
-        
-        if(caz==5)
-           { if(card2.verif_brawler(card7.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card7.printCard();}
-                else
-                card2.AddPlayer(card7);    
-           } 
-        
-        if(caz==6)
-           { if(card2.verif_brawler(card8.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card8.printCard();}
-                else
-                card2.AddPlayer(card8);    
-           } 
-        
-        if(caz==7)
-           { if(card2.verif_brawler(card9.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card9.printCard();}
-                else
-                card2.AddPlayer(card9);    
-           } 
-        
-        if(caz==8)
-           { if(card2.verif_brawler(card10.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card10.printCard();}
-                else
-                card2.AddPlayer(card10);    
-           } 
-        
-        if(caz==9)
-           { if(card2.verif_brawler(card11.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card11.printCard();}
-                else
-                card2.AddPlayer(card11);    
-           } 
-        
-        if(caz==10)
-           { if(card2.verif_brawler(card12.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card12.printCard();}
-                else
-                card2.AddPlayer(card12);    
-           } 
-        
-        if(caz==11)
-           { if(card2.verif_brawler(card13.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card13.printCard();}
-                else
-                card2.AddPlayer(card13);    
-           } 
-        
-        if(caz==12)
-           { if(card2.verif_brawler(card13.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card13.printCard();}
-                else
-                card2.AddPlayer(card13);    
-           } 
-        
-        if(caz==13)
-           { if(card2.verif_brawler(card14.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card14.printCard();}
-                else
-                card2.AddPlayer(card14);    
-           } 
-        
-        if(caz==14)
-           { if(card2.verif_brawler(card15.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card15.printCard();}
-                else
-                card2.AddPlayer(card15);    
-           } 
-        
-        if(caz==15)
-           { if(card2.verif_brawler(card16.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card16.printCard();}
-                else
-                card2.AddPlayer(card16);    
-           } 
-        
-        if(caz==16)
-           { if(card2.verif_brawler(card17.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card17.printCard();}
-                else
-                card2.AddPlayer(card17);    
-           } 
-        
-        if(caz==17)
-           { if(card2.verif_brawler(card18.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card18.printCard();}
-                else
-                card2.AddPlayer(card18);    
-           } 
-        
-        if(caz==18)
-           { if(card2.verif_brawler(card19.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card19.printCard();}
-                else
-                card2.AddPlayer(card19);    
-           } 
-        
-        if(caz==19)
-           { if(card2.verif_brawler(card20.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card20.printCard();}
-                else
-                card2.AddPlayer(card20);    
-           } 
-        
-        if(caz==20)
-           { if(card2.verif_brawler(card21.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card21.printCard();}
-                else
-                card2.AddPlayer(card21);    
-           }  
-        
-        if(caz==21)
-           { if(card2.verif_brawler(card22.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card22.printCard();}
-                else
-                card2.AddPlayer(card22);    
-           } 
-        
-        if(caz==22)
-           { if(card2.verif_brawler(card23.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card23.printCard();}
-                else
-                card2.AddPlayer(card23);    
-           } 
-        
-        if(caz==23)
-           { if(card2.verif_brawler(card24.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card24.printCard();}
-                else
-                card2.AddPlayer(card24);    
-           } 
-        
-        if(caz==24)
-           { if(card2.verif_brawler(card25.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card25.printCard();}
-                else
-                card2.AddPlayer(card25);    
-           } 
-        
-        if(caz==25)
-           { if(card2.verif_brawler(card26.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card26.printCard();}
-                else
-                card2.AddPlayer(card26);    
-           } 
-           if(caz==25)
-           { if(card2.verif_brawler(card26.getName()))
-                {std::cout<<"Ai primit o dublura"<<'\n';
-                card26.printCard();}
-                else
-                card2.AddPlayer(card27);    
-           } 
-        
-        std::cout<<"Your brawlers list: "<<'\n';
-        card2.printCardList();
-
-        bani.Istoric(bani.getBanuti());
-        std::cout<<"Balanta ta: "<<bani.getBanuti()<<std::endl;
-        std::cout<<"Istoricul tau la bani: "<<std::endl;
-        bani.printIstoric();
-        bani.VerifBalanta(bani.getBanuti());
-        
-        
-
-    }
+    
 
     if(unbox==2){
         int caz_duo;
@@ -470,13 +273,13 @@ int main()
         else if(caz_joc==5)
             card2.AddGame("Football");
         
-        std::cout<<"Istoricul jocurilor dumneavoastra:";
+        std::cout<<"Your games history:";
         card2.ListGames();
-        std::cout<<"alege cum vrei sa joci: 1)singur  2) cu un prieten"<<std::endl;
+        std::cout<<"choose how you want to play: 1)solo  2) in a team"<<std::endl;
         std::cin>>caz_duo;
-        std::cout<<"Caracterele tale sunt: ";
+        std::cout<<"Your characters: ";
         card2.printCardList();
-        std::cout<<"/////introdu caracterul:"<<std::endl;
+        std::cout<<"-----------type your character------------:"<<std::endl;
         
         std::string caracter;
         std::cin>>caracter;
@@ -501,7 +304,7 @@ int main()
         card2.CheckAfterGame();
         rank=card2.getRank();
         XP=card2.getXP();
-        std::cout<<"Rankul tau: "<<rank<<" Xp-ul tau: "<<XP<<'\n';
+        std::cout<<"Your Rank: "<<rank<<" Your XP: "<<XP<<'\n';
         
 
 
@@ -509,23 +312,57 @@ int main()
 
         else 
         {
-            std::cout<<"Nu detineti caracterul selectat: "<<caracter<<'\n';
-            std::cout<<"Caracterele tale sunt: ";
+            std::cout<<"You dont own the selected character: "<<caracter<<'\n';
+            std::cout<<"Your characters are: ";
             card2.printCardList();
             
 
         }
         
     }
-    if(unbox==3)
+   if (unbox == 1) {
+    bani.Spend();
+    caz = (rand()) % 52;
+Card cards[] = {card1,card2, card3, card4, card5, card6, card7, card8, card9, card10, 
+                card11, card12, card13, card14, card15, card16, card17, card18,
+                card19, card20, card21, card22, card23, card24, card25, card26,
+                card27, card28, card29, card30, card31, card32, card33, card34,
+                card35, card36, card37, card38, card39, card40, card41, card42,
+                card43, card44, card45, card46, card47, card48, card49, card50,
+                card51, card52};
+
+
+    if (caz >= 0 && caz <= 51) {
+        if (card2.verif_brawler(cards[caz].getName())) {
+            std::cout << "You got a Brawler you already have" << '\n';
+            cards[caz].printCard();
+        } else {
+            card2.AddPlayer(cards[caz]);
+        }
+    }
+
+    std::cout << "Your brawlers list: " << '\n';
+    card2.printCardList();
+
+    bani.Istoric(bani.getBanuti());
+    std::cout << "Your balance: " << bani.getBanuti() << std::endl;
+    std::cout << "Your money history: " << std::endl;
+    bani.printIstoric();
+   }
+    bani.VerifBalanta(bani.getBanuti()); if(unbox==3)
     {
         std::cout<<"da la ruleta"<<std::endl;
         
     }
     if(unbox==4)
     {
-        std::cout<<"Multumesc ca ai jucat!";
+        std::cout<<"Thanks for playing!";
         break;
+    }
+    else if(unbox!=1&&unbox!=2&&unbox!=3&&unbox!=4)
+    {
+        std::cout<<"Action denied!"<<std::endl;
+        
     }
     }
 

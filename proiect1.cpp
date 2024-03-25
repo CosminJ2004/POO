@@ -160,10 +160,40 @@ class Balance
     { 
         return banuti;
     }
-
+    void Spend2(int credits)
+    {
+        banuti=banuti+credits;
+    }
+     
         
-        
 
+};
+
+class Pacanele
+{
+    private:
+        int Numar;
+        int Culoare;
+    public:
+        int Play_Number(int credite, int choice)
+        {
+            int num=rand()%37;
+            if(choice==num)
+                {
+                    return credite*36;
+                }
+            return credite*(-1);
+        }
+        int Play_Colour(int credite, int col)
+        {
+            int num=rand()%2;
+            if(col==num)
+            {
+                return credite*2;
+            }
+            return credite*(-1);
+
+        }
 };
 
 int main()
@@ -171,60 +201,59 @@ int main()
 
 
     std::cout<<"Primesti automat 1 caracter si 100 de banuti"<<'\n'<<"Rankul tau e 0"<<std::endl;
-    Card card2("Shelly",5,"Common");
+    Card card0("Shelly",5,"Common");
+    Card card2("Nita", 1, "Common");
     card2.AddPlayer(card2);
     card2.printCard();
-    Card card3("El Primo",2,"Rare");
-    Card card4("Bull",5,"Rare");
-    Card card5("Surge",1,"Legendary");
-    Card card6("Emz",5,"Epic");
-    Card card7("Dynamike",3,"SuperRare");
-    Card card8("Brock",6,"Rare");
-    Card card9("8-Bit",3,"SuperRare");
-    Card card10("Bea",2,"Epic");
-    Card card11("Eve",3,"Mythic");
-    Card card12("Byron",5,"Mythic");
-    Card card13("Nani",2,"Epic");
-    Card card14("Kit",1,"Legendary");
-    Card card15("Sandy",5,"Legendary");
-    Card card16("Meg",5,"Legendary");
-    Card card17("Doug",1,"Mythic");
-    Card card18("Pearl",2,"Epic");
-    Card card19("Spike",5,"Legendary");
-    Card card1("Cordelius",1,"Legendary");
-    Card card20("Penny",7,"Rare");
-    Card card21("Amber",1,"Legendary");
-    Card card22("Tara",2,"Mythic");
-    Card card23("Carl",12,"Rare");
-    Card card24("Darryl",3,"Rare");
-    Card card25("Gus",4,"SuperRare");
-    Card card26("Jessie",1,"SuperRare");
-    Card card27("Nita Special", 1, "Common");
-    Card card28("Nita", 1, "Common");
-    Card card29("Colt", 1, "Common");
-    Card card30("Barley", 1, "Rare");
-    Card card31("Poco", 1, "Rare");
-    Card card32("Rosa", 1, "Rare");
-    Card card33("Rico", 1, "Super Rare");
-    Card card34("Jacky", 1, "Super Rare");
-    Card card35("Piper", 1, "Epic");
-    Card card36("Pam", 1, "Epic");
-    Card card37("Frank", 1, "Epic");
-    Card card38("Bibi", 1, "Epic");
-    Card card39("Edgar", 1, "Epic");
-    Card card40("Max", 1, "Mythic");
-    Card card41("Mr. P", 1, "Mythic");
-    Card card42("Sprout", 1, "Mythic");
-    Card card43("Gene", 1, "Mythic");
-    Card card44("Crow", 1, "Legendary");
-    Card card45("Leon", 1, "Legendary");
-    Card card46("Colette", 1, "Legendary");
-    Card card47("Lou", 1, "Legendary");
-    Card card48("Colonel Ruffs", 1, "Legendary");
-    Card card49("Belle", 1, "Chromatic");
-    Card card50("Squeak", 1, "Chromatic");
-    Card card51("Buzz", 1, "Chromatic");
-    Card card52("Griff", 1, "Chromatic");
+Card card1("Nita Special", 1, "Common");
+
+Card card3("Colt", 1, "Common");
+Card card4("Poco", 1, "Rare");
+Card card5("Rosa", 1, "Rare");
+Card card6("Barley", 1, "Rare");
+Card card7("Carl", 1, "Rare");
+Card card8("Darryl", 1, "Rare");
+Card card9("Penny", 1, "Rare");
+Card card10("Brock", 1, "Rare");
+Card card11("Bull", 1, "Rare");
+Card card12("Gus", 12, "Super Rare");
+Card card13("Jessie", 13, "Super Rare");
+Card card14("Rico", 14, "Super Rare");
+Card card15("Jacky", 15, "Super Rare");
+Card card16("8-Bit", 16, "Super Rare");
+Card card17("Dynamike", 17, "Super Rare");
+Card card18("Amber", 18, "Epic");
+Card card19("Kit", 19, "Epic");
+Card card20("Doug", 20, "Mythic");
+Card card21("Meg", 21, "Epic");
+Card card22("Sandy", 22, "Epic");
+Card card23("Cordelius", 23, "Epic");
+Card card24("Nani", 24, "Epic");
+Card card25("Pearl", 25, "Epic");
+Card card26("Bea", 26, "Epic");
+Card card27("Emz", 27, "Epic");
+Card card28("Piper", 28, "Epic");
+Card card29("Pam", 29, "Epic");
+Card card30("Frank", 30, "Epic");
+Card card31("Bibi", 31, "Epic");
+Card card32("Edgar", 32, "Epic");
+Card card33("Eve", 33, "Mythic");
+Card card34("Byron", 34, "Mythic");
+Card card35("Spike", 35, "Legendary");
+Card card36("Tara", 36, "Legendary");
+Card card37("Belle", 37, "Legendary");
+Card card38("Squeak", 38, "Legendary");
+Card card39("Buzz", 39, "Legendary");
+Card card40("Griff", 40, "Legendary");
+Card card41("Max", 41, "Legendary");
+Card card42("Mr. P", 42, "Legendary");
+Card card43("Sprout", 43, "Legendary");
+Card card44("Gene", 44, "Legendary");
+Card card45("Crow", 45, "Legendary");
+Card card46("Leon", 46, "Legendary");
+Card card47("Colette", 47, "Legendary");
+Card card48("Colonel Ruffs", 48, "Legendary");
+Card card49("Lou", 49, "Legendary");
 
 
 
@@ -322,24 +351,55 @@ int main()
     }
    if (unbox == 1) {
     bani.Spend();
-    caz = (rand()) % 52;
-Card cards[] = {card1,card2, card3, card4, card5, card6, card7, card8, card9, card10, 
+    caz = (rand()) % 900;
+Card cards[] = {card0,card1,card2, card3, card4, card5, card6, card7, card8, card9, card10, 
                 card11, card12, card13, card14, card15, card16, card17, card18,
                 card19, card20, card21, card22, card23, card24, card25, card26,
                 card27, card28, card29, card30, card31, card32, card33, card34,
                 card35, card36, card37, card38, card39, card40, card41, card42,
-                card43, card44, card45, card46, card47, card48, card49, card50,
-                card51, card52};
+                card43, card44, card45, card46, card47, card48, card49};
 
 
-    if (caz >= 0 && caz <= 51) {
-        if (card2.verif_brawler(cards[caz].getName())) {
+    if (caz >= 0 && caz <=300) {
+        if (card2.verif_brawler(cards[caz%4].getName())) {
             std::cout << "You got a Brawler you already have" << '\n';
-            cards[caz].printCard();
+            cards[caz%4].printCard();
         } else {
-            card2.AddPlayer(cards[caz]);
+            card2.AddPlayer(cards[caz%4]);
         }
     }
+    if (caz >= 301 && caz <=500) {
+        if (card2.verif_brawler(cards[caz%8+4].getName())) {
+            std::cout << "You got a Brawler you already have" << '\n';
+            cards[caz%8+4].printCard();
+        } else {
+            card2.AddPlayer(cards[caz%8+4]);
+        } 
+    }
+     if (caz >= 501 && caz <=700) {
+        if (card2.verif_brawler(cards[caz%5+12].getName())) {
+            std::cout << "You got a Brawler you already have" << '\n';
+            cards[caz%5+12].printCard();
+        } else {
+            card2.AddPlayer(cards[caz%5+12]);
+        }
+     }
+     if (caz >= 701 && caz <=800) {
+        if (card2.verif_brawler(cards[caz%18+18].getName())) {
+            std::cout << "You got a Brawler you already have" << '\n';
+            cards[caz%18+18].printCard();
+        } else {
+            card2.AddPlayer(cards[caz%18+18]);
+        }
+     }
+     if (caz >= 801 && caz <=899) {
+        if (card2.verif_brawler(cards[caz%16+35].getName())) {
+            std::cout << "You got a Brawler you already have" << '\n';
+            cards[caz%16+35].printCard();
+        } else {
+            card2.AddPlayer(cards[caz%16+35]);
+        }
+     }
 
     std::cout << "Your brawlers list: " << '\n';
     card2.printCardList();
@@ -348,11 +408,53 @@ Card cards[] = {card1,card2, card3, card4, card5, card6, card7, card8, card9, ca
     std::cout << "Your balance: " << bani.getBanuti() << std::endl;
     std::cout << "Your money history: " << std::endl;
     bani.printIstoric();
+   
+    bani.VerifBalanta(bani.getBanuti()); 
    }
-    bani.VerifBalanta(bani.getBanuti()); if(unbox==3)
+     
+    
+    if(unbox==3)
     {
-        std::cout<<"da la ruleta"<<std::endl;
-        
+        int ok1=1;
+        while(ok1)
+        {
+        std::cout<<"Roulette"<<std::endl;
+        std::cout<<"Choose what do you want to bet on: 1)Colour  2)Number"<<std::endl;
+        int choice;
+        std::cin>>choice;
+        Pacanele ruleta;
+        if(choice==1)
+        {
+                    std::cout<<"Choose what do you want to bet on: 1)Black  2)Red"<<std::endl;
+                    int choice2;
+                    std::cin>>choice2;
+                    std::cout<<"Choose the amount you are betting: "<<std::endl;
+                    int credits;
+                    std::cin>>credits;
+                    if(credits>bani.getBanuti())
+                    {
+                        std::cout<<"insuficient funds!"<<std::endl;
+
+                    }
+                    else {bani.Spend2(ruleta.Play_Colour(credits,choice));  bani.VerifBalanta(bani.getBanuti());std::cout<<bani.getBanuti()<<'\n'; ok1=0;}
+        }
+        else{
+            std::cout<<"Choose the number youre betting on (0-36)"<<std::endl;
+                    int choice2;
+                    std::cin>>choice2;
+
+            std::cout<<"Choose the amount you are betting: "<<std::endl;
+                    int credits;
+                    std::cin>>credits;
+                     if(credits>bani.getBanuti())
+                    {
+                        std::cout<<"insuficient funds!"<<std::endl;
+
+                    }
+                  else {bani.Spend2(  ruleta.Play_Number(credits,choice2)); bani.VerifBalanta(bani.getBanuti()); std::cout<<bani.getBanuti()<<'\n'; ok1=0;}
+        }
+        }
+
     }
     if(unbox==4)
     {
@@ -365,6 +467,6 @@ Card cards[] = {card1,card2, card3, card4, card5, card6, card7, card8, card9, ca
         
     }
     }
+     }
 
     
-}

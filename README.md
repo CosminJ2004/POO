@@ -1,0 +1,1 @@
+A C++ game that simulates being in a brawl stars menu, but with some changes. You can unbox to get brawlers, you can sell them for a profit, you can also choose to play from five different gamemodes. A bonus is also a roulette option that lets you play with your money. Have fun!
